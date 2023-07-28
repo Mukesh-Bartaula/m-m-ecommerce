@@ -1,0 +1,75 @@
+{% extends './base.html' %}
+{% block content %}
+<div>
+    <div class="my-lg-5"
+        style=" text-align: center; width: 1150px; margin: auto; background-color: rgb(240, 241, 241); ">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col-lg-1">SN</th>
+                    <th scope="col-lg-2">Image</th>
+                    <th scope="col-lg-2">Item</th>
+                    <th scope="col-lg-1">Amount</th>
+                    <th scope="col-lg-2">Price</th>
+                    <th scope="col-lg-2">Total</th>
+                    <th scope="col-lg-1">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td class="col-lg-2">
+                        <div style="display: inline-block; ">
+                            <img style="height: 80px; width: auto; padding: 5px;" src="{{ product.image.url }}">
+
+                        </div>
+                    </td>
+                    <td>
+                        <span>{{ product.name }}</span>
+                    </td>
+                    <td>
+                        <div style="display: inline-flex;">
+                            <span>1 pcs</span>
+                            <div style="display: flex;  flex-direction: column; padding: 2px 5px;">
+                                <i class="fa fa-caret-up" style="line-height: 10px;"></i>
+                                <i class="fa fa-caret-down" style="line-height: 10px;"></i>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Rs.{{ product.price }}</span>
+                    </td>
+                    <td>
+                        <span>Rs. {{ product.price }}</span>
+                    </td>
+                    <td>
+                        <span><i class="fa fa-solid fa-trash"></i></span>
+                    </td>
+                </tr>
+
+                {% endfor %}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <span>
+                            Total :
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            Rs. {{ cart.total }}
+                        </span>
+                    </td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

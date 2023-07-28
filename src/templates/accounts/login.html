@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>logIn</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+</head>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <div class="login_page_container">
+
+            <div class="login_container">
+                <div class="imgProfile">
+                    <div class="logo">
+                        <a href="/"><img src="{% static 'image/logo.png' %}"></a>
+                    </div>
+                    <img src=" {% static 'image/profile.png' %}">
+                </div>
+                <hr>
+                <div class=" login_box">
+                    <div class="header">
+                        <h3 style="text-align: center; padding-bottom: 10px;">Login</h3>
+                    </div>
+                    <div class="login_body" style="margin: 30px 0;">
+                        {{ forms.username}}
+                        <span style="position: absolute; font-size: 16px ; color: red; text-decoration: none;">
+                            {{ forms.errors.username }}
+                        </span>
+
+
+                        <div class="password " style="margin-top: 20px;">
+                            <!-- <span style="font-size: 24px; background-color: white; position: absolute;margin-top: 3px;
+						 margin-left: 235px;">
+                                <hr style="width: 1px; height: 30px; display: inline"><i class="far fa-eye-slash"
+                                    onclick="showPassword()"></i>
+                            </span> -->
+                            {{ forms.password }}
+                            <!-- {{ forms.password2 }} -->
+                            {{ forms.errors.password }}
+
+                            {{ form.errors }}
+
+                            <div id="password-error"></div>
+                        </div>
+
+                        <span style="font-size: 17px; font-weight: bold; margin-top: 15px; display: inline-block">
+                            <input type="checkbox" name="remember_me" value="1">
+                            Remember me
+                        </span>
+
+                        <div style="text-align: center;">
+                            <button type="submit" class="button" name="login_but"
+                                onclick="checkValidation()">Login</button>
+                        </div>
+                        <!-- <div style="text-align: center; margin-top: -20px;">
+                            <button class="button" name="signin_but" onclick="checkValidation()">Sign In</button>
+                        </div> -->
+                        <span style="font-size: 15px;">
+
+                            If you didnt log in yet,then
+                            signup<a href="{% url 'signup' %}" style="text-decoration: underline;">
+
+                                <strong style="font-size: medium;">here</strong></a>
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>
