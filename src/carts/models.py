@@ -48,9 +48,9 @@ class Cart(models.Model):
     def __str__(self):
         return str(self.id)  #  1
 
-    def save(self, *args, **kwargs):
-        total = 0
-        for product in self.products.all():
-            total += product.price
-        self.total = total
-        return super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     total = 0
+    #     for product in self.products.all():
+    #         total += product.price
+    #     self.total = total
+    #     return super().save(*args, **kwargs)

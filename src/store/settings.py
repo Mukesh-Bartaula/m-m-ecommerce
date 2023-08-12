@@ -47,6 +47,7 @@ CUSTOM_APPS = [
     "carts",
     "search",
     "product_review",
+    "orders",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + CUSTOM_APPS

@@ -55,9 +55,11 @@ product_detail page
                             href="./cart.html">Buy now</a>
                     </span>
                     <span>
-                        <a class="btn btn-outline-success mx-3"
-                            style="display:inline-block;min-height: auto; min-width: 280px;font-size: 50px;"
-                            href="./cart.html">Add cart</a>
+                        <button data-product-id="{{product.id}}"
+                            class="btn btn-outline-success mx-3 add-to-cart addToCart_btn"
+                            style="display:inline-block;min-height: auto; min-width: 280px;font-size: 50px;">Add
+                            cart
+                        </button>
                     </span>
                 </div>
             </div>
